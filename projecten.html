@@ -62,12 +62,16 @@
         }
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
             gap: 32px;
         }
-        @media (max-width: 640px) {
-            .projects-grid { grid-template-columns: 1fr; }
-            .project-card-img { height: 220px; }
+        @media (max-width: 768px) {
+            .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+            .project-card-img { height: 200px; }
+            .project-card-body { padding: 20px; }
+            .project-card-body h3 { font-size: 1.05rem; }
+            .project-card-body p { font-size: 0.85rem; }
+            .project-tag { font-size: 0.7rem; padding: 3px 10px; }
         }
     </style>
     <meta property="og:image" content="https://cvlsolutions.nl/img/favicon-192.png">
@@ -213,7 +217,7 @@
 
                 <!-- The Bridge Utrecht -->
                 <div class="project-card">
-                    <img class="project-card-img" src="https://www.architectuur.nl/wp-content/uploads/2025/08/2-cepexed.jpg" alt="The Bridge Utrecht Science Park" loading="lazy">
+                    <img class="project-card-img" src="https://images.cepezed.nl/production/images/project/1332-transitiegebouw-utrecht/02Bridge_transitiegebouw_utrecht_cepezed.jpg" alt="The Bridge Utrecht Science Park" loading="lazy">
                     <div class="project-card-body">
                         <h3>The Bridge - Utrecht Science Park</h3>
                         <p>BIM-modellering van de complete zwakstroominstallaties op uitvoeringsniveau voor dit circulaire laboratoriumgebouw op Utrecht Science Park. Data-installatie, beveiligingsinstallatie, toegangscontrole, brandmeld- en ontruimingsinstallatie en blokschema's.</p>
