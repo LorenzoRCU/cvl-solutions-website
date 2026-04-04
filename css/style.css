@@ -39,10 +39,16 @@ body {
     color: var(--black);
     background: var(--white);
     line-height: 1.6;
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100vw;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    position: relative;
 }
+
+/* Voorkom overflow op alle elementen */
+.section, .hero, .page-header, .page-header-img,
+.partners, .cta-section, .footer, .section-gray,
+.section-dark { overflow: hidden; }
 
 a {
     text-decoration: none;
@@ -182,6 +188,7 @@ p { margin-bottom: 1rem; }
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
     height: 80px;
 }
 
