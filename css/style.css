@@ -654,8 +654,9 @@ p { margin-bottom: 1rem; }
     align-items: center;
     justify-content: center;
     color: var(--accent);
-    font-size: 1.1rem;
 }
+.usp-icon svg { width: 20px; height: 20px; }
+.contact-detail-icon svg { width: 22px; height: 22px; }
 
 .usp-item h4 {
     margin-bottom: 4px;
