@@ -1141,6 +1141,9 @@ p { margin-bottom: 1rem; }
     .contact-grid { grid-template-columns: 1fr; }
     .two-col { grid-template-columns: 1fr; gap: 40px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    /* Huur ons in section — stack cards + grid on mobile */
+    #huur-in .container > div:nth-of-type(2) { grid-template-columns: 1fr !important; }
+    #huur-in .container > div:nth-of-type(3) > div { grid-template-columns: 1fr !important; gap: 32px !important; }
 }
 
 @media (max-width: 640px) {
