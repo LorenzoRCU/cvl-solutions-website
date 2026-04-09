@@ -513,7 +513,18 @@ p { margin-bottom: 1rem; }
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    font-size: 1.5rem;
+    color: var(--primary, #4743c5);
+    transition: all 0.3s ease;
+}
+.service-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 2;
+}
+.service-card:hover .service-icon {
+    background: var(--primary, #4743c5);
+    color: white;
+    transform: scale(1.05);
 }
 
 .service-card h3 {
