@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Lichtberekening, Kabelberekening &amp; PV Opbrengstberekening | INTELEC-gecertificeerd | CVL Solutions</title>
+    <meta name="description" content="Professionele elektrotechnische berekeningen: lichtberekening (Dialux), kabelberekening fabrikantonafhankelijk &amp; INTELEC-gecertificeerd, PV-installatie ontwerp en opbrengstberekeningen. Snel advies en uitvoerbare rapporten voor uw project.">
+    <meta name="keywords" content="lichtberekening aanvragen, lichtberekening uitbesteden, Dialux berekening, kabelberekening, kabelberekening fabrikantonafhankelijk, INTELEC kabelberekening, PV berekening, PV opbrengstberekening, PV installatie berekening, zonnepaneel opbrengst berekenen, elektrotechnische berekeningen, installatieberekeningen">
+    <meta property="og:title" content="Lichtberekening, Kabelberekening &amp; PV Berekeningen | CVL Solutions">
+    <meta property="og:description" content="Laat uw licht-, kabel- en PV-berekeningen uitvoeren door INTELEC-gecertificeerde specialisten. Fabrikantonafhankelijk, NEN-conform en snel geleverd.">
+    <meta property="og:url" content="https://www.cvlsolutions.nl/berekeningen">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.cvlsolutions.nl/berekeningen">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Sora:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Zorg dat alles altijd zichtbaar is (override reveal/stagger) */
+        .reveal, .reveal-left, .reveal-right,
+        .stagger-children > * {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Duidelijke witte secundaire knop in hero */
+        .btn-hero-secondary {
+            background: rgba(255,255,255,0.15) !important;
+            color: #ffffff !important;
+            border: 2px solid #ffffff !important;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+        .btn-hero-secondary:hover {
+            background: #ffffff !important;
+            color: #4743c5 !important;
+            transform: translateY(-2px);
+        }
+
+        /* Zorg dat lange woorden in service cards netjes breken */
+        .service-card,
+        .service-card h3,
+        .service-card p,
+        .service-card li {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+        /* Duidelijke CTA in service cards */
+        .card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: #4743c5;
+            color: #ffffff !important;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 2px solid #4743c5;
+        }
+        .card-cta:hover {
+            background: #3a36a8;
+            border-color: #3a36a8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(71, 67, 197, 0.3);
+        }
+        .card-cta span {
+            transition: transform 0.2s ease;
+        }
+        .card-cta:hover span {
+            transform: translateX(4px);
+        }
+
+        /* FAQ styling */
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            border: 1px solid #E5E5EA;
+            cursor: pointer;
+        }
+        .faq-item summary {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1C1C1E;
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: #4743c5;
+            font-weight: 400;
+        }
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+        .faq-item p {
+            margin: 12px 0 0;
+            color: #3C3C43;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Process steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .process-step {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            border: 1px solid #E5E5EA;
+            position: relative;
+        }
+        .process-step .step-number {
+            width: 40px;
+            height: 40px;
+            background: #4743c5;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+        .process-step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .process-step p {
+            color: #3C3C43;
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+    </style>
+
+    <!-- Structured data: Service with offered calculations -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Elektrotechnische Berekeningen",
+        "description": "Lichtberekeningen, kabelberekeningen (fabrikantonafhankelijk en INTELEC-gecertificeerd) en PV-installatie opbrengstberekeningen voor utiliteit en woningbouw.",
+        "url": "https://www.cvlsolutions.nl/berekeningen",
+        "provider": {
+            "@type": "Organization",
+            "name": "CVL Solutions",
+            "url": "https://www.cvlsolutions.nl"
+        },
+        "areaServed": "NL",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Berekeningen",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {"@type": "Service", "name": "Lichtberekening", "description": "Dialux-berekeningen voor binnen- en buitenverlichting conform NEN-EN 12464-1 en de Arbo-richtlijnen."}
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {"@type": "Service", "name": "Kabelberekening", "description": "Fabrikantonafhankelijke kabelberekeningen volgens NEN 1010, INTELEC-gecertificeerd. Berekening van kabeldoorsnedes, spanningsval en kortsluitstromen."}
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {"@type": "Service", "name": "PV-installatie en opbrengstberekening", "description": "Ontwerp en opbrengstberekening van PV-installaties: stringconfiguratie, omvormerkeuze, jaaropbrengst en ROI."}
+                }
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Wat is een lichtberekening en wanneer heb ik die nodig?", "acceptedAnswer": {"@type": "Answer", "text": "Een lichtberekening toont aan of een verlichtingsinstallatie voldoet aan de norm NEN-EN 12464-1 (werkplekverlichting) of NEN 5454 (noodverlichting). Je hebt een lichtberekening nodig bij nieuwbouw, verbouw, aanbesteding of bij een wijziging van werkplekinrichting. Wij leveren Dialux-berekeningen met armatuurkeuze, lichtsterkte-contouren en glare rating."}},
+            {"@type": "Question", "name": "Wat betekent 'kabelberekening fabrikantonafhankelijk'?", "acceptedAnswer": {"@type": "Answer", "text": "Fabrikantonafhankelijk betekent dat onze kabelberekening niet gebonden is aan één kabelproducent of software. Wij rekenen conform NEN 1010 en de IEC 60364-norm met objectieve berekeningsmethodes, zodat u de juiste kabeldoorsnede krijgt zonder voorkeur voor een specifiek merk. Dit geeft u vrijheid bij inkoop en aanbesteding."}},
+            {"@type": "Question", "name": "Wat betekent INTELEC-gecertificeerd?", "acceptedAnswer": {"@type": "Answer", "text": "Onze berekeningen zijn uitgevoerd door een INTELEC-gecertificeerde specialist. INTELEC is het onafhankelijke Nederlandse certificeringsinstituut voor elektrotechnische engineering. De certificering garandeert dat de berekening voldoet aan de geldende normen en dat de verantwoordelijke een bewezen expertiseniveau heeft."}},
+            {"@type": "Question", "name": "Wat zit er in een PV-opbrengstberekening?", "acceptedAnswer": {"@type": "Answer", "text": "Een PV-opbrengstberekening geeft inzicht in de verwachte jaaropbrengst (kWh), terugverdientijd, ROI en CO2-besparing van een zonnepaneleninstallatie. Wij nemen daarbij locatie, dakhelling, orientatie, schaduwwerking, kabelverlies en omvormerrendement mee. Rapport inclusief stringconfiguratie, omvormeradvies en netinpassingscheck."}},
+            {"@type": "Question", "name": "Hoe lang duurt een berekening?", "acceptedAnswer": {"@type": "Answer", "text": "Standaardberekeningen (enkel project, duidelijke input) leveren wij binnen 3-5 werkdagen. Complexere projecten met clash checks, meerdere varianten of optimalisatie-rondes duren 1-3 weken. Neem contact op voor een concrete doorlooptijd voor uw project."}},
+            {"@type": "Question", "name": "Wat hebben jullie van mij nodig om te beginnen?", "acceptedAnswer": {"@type": "Answer", "text": "Voor een lichtberekening: plattegronden (DWG/PDF), plafondhoogtes, gewenste werkplektypes. Voor een kabelberekening: verdeelinrichtingsoverzicht, gewenste groepen, kabellengtes, omgevingstemperatuur. Voor PV: daktekening, locatie, gewenste systeemgrootte of budget."}}
+        ]
+    }
+    </script>
+
+    <meta property="og:image" content="https://cvlsolutions.nl/img/favicon-192.png">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">CVL Solutions</a>
+            <nav class="nav-links">
+                <a href="engineering.html">Engineering</a>
+                <a href="berekeningen.html">Berekeningen</a>
+                <a href="bim-modellering.html">BIM-Modellering</a>
+                <a href="https://lynk3d.netlify.app" target="_blank" rel="noopener">3D-Printservice</a>
+                <a href="prefab-solutions.html">Prefab Solutions</a>
+                <a href="projecten.html">Projecten</a>
+                <a href="index.html#huur-in" style="color: #34C759; font-weight: 700;">Huur ons in</a>
+                <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Contact</a>
+            </nav>
+            <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="engineering.html">Engineering</a>
+            <a href="berekeningen.html">Berekeningen</a>
+            <a href="bim-modellering.html">BIM-Modellering</a>
+            <a href="https://lynk3d.netlify.app" target="_blank" rel="noopener">3D-Printservice</a>
+            <a href="prefab-solutions.html">Prefab Solutions</a>
+            <a href="projecten.html">Projecten</a>
+            <a href="index.html#huur-in" style="color: #34C759; font-weight: 700;">Huur ons in</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-text-panel">
+                <span class="section-label">Berekeningen</span>
+                <h1>Licht-, Kabel- en <span class="highlight">PV Berekeningen</span></h1>
+                <p>Professionele elektrotechnische berekeningen door een <strong>INTELEC-gecertificeerde</strong> specialist. Fabrikantonafhankelijk, NEN-conform en direct uitvoerbaar. Van lichtberekening (Dialux) tot kabelberekening en PV-opbrengstberekening.</p>
+                <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+                    <a href="#aanvragen" class="btn btn-primary">Berekening aanvragen</a>
+                    <a href="#diensten" class="btn btn-hero-secondary">Bekijk diensten</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust bar -->
+    <section class="section" style="padding-top:40px;padding-bottom:40px;">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;text-align:center;">
+                <div>
+                    <div style="font-size:1.4rem;font-weight:700;color:var(--gold, #b8860b);word-wrap:break-word;">INTELEC</div>
+                    <div style="font-size:0.85rem;color:var(--gray-mid);margin-top:4px;">Gecertificeerd</div>
+                </div>
+                <div>
+                    <div style="font-size:1.4rem;font-weight:700;color:var(--gold, #b8860b);word-wrap:break-word;">NEN 1010</div>
+                    <div style="font-size:0.85rem;color:var(--gray-mid);margin-top:4px;">&amp; NEN-EN 12464-1</div>
+                </div>
+                <div>
+                    <div style="font-size:1.15rem;font-weight:700;color:var(--gold, #b8860b);word-wrap:break-word;line-height:1.3;">Fabrikantonafhankelijk</div>
+                    <div style="font-size:0.85rem;color:var(--gray-mid);margin-top:4px;">Vrij van merk-voorkeur</div>
+                </div>
+                <div>
+                    <div style="font-size:1.4rem;font-weight:700;color:var(--gold, #b8860b);word-wrap:break-word;">3-5 werkdagen</div>
+                    <div style="font-size:0.85rem;color:var(--gray-mid);margin-top:4px;">Standaard levertijd</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diensten -->
+    <section class="section" id="diensten">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Onze berekeningen</span>
+                <h2 class="section-title">Drie berekeningen, één specialist</h2>
+                <p class="section-subtitle">Alle berekeningen worden uitgevoerd door een INTELEC-gecertificeerde engineer en voldoen aan de geldende NEN- en IEC-normen.</p>
+            </div>
+
+            <div class="services-grid stagger-children">
+                <!-- Lichtberekening -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Lichtberekening</h3>
+                    <p style="font-weight:600;color:var(--teal);font-size:0.85rem;margin-bottom:12px;">NEN-EN 12464-1 · Dialux Evo</p>
+                    <p>Professionele lichtberekening voor kantoren, industriehallen, winkels, zorginstellingen en buitenverlichting. Wij maken Dialux-berekeningen met lichtsterkte-contouren, UGR-waarden (glare rating), gelijkmatigheid en kleurweergave.</p>
+                    <ul class="feature-list" style="margin-top:12px;">
+                        <li>Binnenverlichting volgens NEN-EN 12464-1</li>
+                        <li>Noodverlichting volgens NEN 6088 / NEN 1838</li>
+                        <li>Buitenverlichting en terreinverlichting</li>
+                        <li>Daglicht-integratie en sensorstrategieën</li>
+                        <li>Armatuur-onafhankelijk advies</li>
+                        <li>3D renders op aanvraag</li>
+                    </ul>
+                    <a href="#aanvragen" class="card-cta" style="margin-top:20px;">Lichtberekening aanvragen <span aria-hidden="true">&rarr;</span></a>
+                </div>
+
+                <!-- Kabelberekening -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            <circle cx="6" cy="6" r="3"/>
+                            <circle cx="18" cy="18" r="3"/>
+                            <path d="M6 9v6a6 6 0 0 0 6 6h3M18 15V9a6 6 0 0 0-6-6H9"/>
+                        </svg>
+                    </div>
+                    <h3>Kabelberekening</h3>
+                    <p style="font-weight:600;color:var(--teal);font-size:0.85rem;margin-bottom:12px;word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;">NEN 1010 · INTELEC-gecertificeerd · fabrikantonafhankelijk</p>
+                    <p>Fabrikantonafhankelijke kabelberekening conform NEN 1010 en IEC 60364. Bepaling van kabeldoorsnede, spanningsval, kortsluitstromen, selectiviteit en beveiligingscoordinatie. Geen merk-voorkeur, volledige transparantie.</p>
+                    <ul class="feature-list" style="margin-top:12px;">
+                        <li>Kabeldoorsnede-bepaling volgens NEN 1010</li>
+                        <li>Spanningsval- en kortsluitberekening</li>
+                        <li>Selectiviteitscheck en beveiligingscoordinatie</li>
+                        <li>Aardlekbeveiliging en aardingsberekening</li>
+                        <li>Leidinglengtes en groepsoverzicht</li>
+                        <li>Rapport geschikt voor aanbesteding en controle</li>
+                    </ul>
+                    <a href="#aanvragen" class="card-cta" style="margin-top:20px;">Kabelberekening aanvragen <span aria-hidden="true">&rarr;</span></a>
+                </div>
+
+                <!-- PV Berekening -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            <circle cx="12" cy="12" r="4"/>
+                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                        </svg>
+                    </div>
+                    <h3>PV-installatie &amp; Opbrengst</h3>
+                    <p style="font-weight:600;color:var(--teal);font-size:0.85rem;margin-bottom:12px;">Stringontwerp · kWh-opbrengst · ROI</p>
+                    <p>Ontwerp van zonnepaneleninstallaties (PV) inclusief opbrengstberekening. Van stringconfiguratie en omvormerkeuze tot jaaropbrengst, terugverdientijd en netinpassing. Ideaal voor utiliteit, MKB en grote daken.</p>
+                    <ul class="feature-list" style="margin-top:12px;">
+                        <li>Daklayout en stringconfiguratie</li>
+                        <li>Omvormer-dimensionering (centraal of string)</li>
+                        <li>Jaaropbrengst (kWh) met schaduw-analyse</li>
+                        <li>Terugverdientijd &amp; ROI</li>
+                        <li>Netinpassingscheck (teruglevercapaciteit)</li>
+                        <li>CO2-besparing en duurzaamheidsrapport</li>
+                    </ul>
+                    <a href="#aanvragen" class="card-cta" style="margin-top:20px;">PV berekening aanvragen <span aria-hidden="true">&rarr;</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waarom CVL -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Waarom CVL Solutions?</span>
+                <h2 class="section-title">Onafhankelijk, gecertificeerd, snel</h2>
+            </div>
+            <div class="services-grid stagger-children" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+                <div class="service-card">
+                    <h3>INTELEC-gecertificeerd</h3>
+                    <p>Berekeningen worden uitgevoerd en ondertekend door een INTELEC-gecertificeerde engineer. Volledige traceerbaarheid en aantoonbaar expertiseniveau voor opdrachtgever, controleurs en verzekeraars.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fabrikantonafhankelijk</h3>
+                    <p>Wij rekenen zonder voorkeur voor een specifieke kabelproducent, armatuurfabrikant of omvormermerk. U krijgt een objectief advies dat u vrij houdt bij inkoop en aanbesteding.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Direct uitvoerbaar rapport</h3>
+                    <p>Heldere rapporten met een samenvatting, uitgangspunten, normverwijzingen, berekeningsresultaten en aanbevelingen. Geschikt voor opdrachtgever, installateur en bevoegd gezag.</p>
+                </div>
+                <div class="service-card">
+                    <h3>BIM-integratie mogelijk</h3>
+                    <p>Bij BIM-projecten kunnen wij de berekeningen rechtstreeks koppelen aan uw Revit model. Lichtarmaturen, kabeltraces en PV-velden verschijnen automatisch in het coordinatiemodel.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Snelle doorlooptijd</h3>
+                    <p>Standaardberekeningen binnen 3-5 werkdagen, spoedopdrachten in overleg. Duidelijke vaste prijzen zonder verborgen kosten. Vraag vrijblijvend een offerte aan.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Onderdeel van een full-service bureau</h3>
+                    <p>Als onderdeel van CVL Solutions hebben wij direct toegang tot BIM-modellering, prefab-ondersteuning en een eigen Revit add-in (LYNK Electrical). Eenmaal gerekend, overal bruikbaar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proces -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Proces</span>
+                <h2 class="section-title">Van aanvraag tot rapport in 4 stappen</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Aanvraag &amp; intake</h3>
+                    <p>Vul het formulier in of neem direct contact op. Wij bellen binnen 1 werkdag om de scope te bespreken en de benodigde input te verzamelen.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Offerte &amp; planning</h3>
+                    <p>U ontvangt een vaste offerte met duidelijke leverdatum. Na akkoord reserveren wij capaciteit en starten we direct.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Berekening &amp; review</h3>
+                    <p>Berekening uitgevoerd volgens de relevante NEN/IEC-norm, interne kwaliteitsreview door een tweede engineer.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Rapport &amp; toelichting</h3>
+                    <p>Oplevering van een helder rapport (PDF + bronbestanden op verzoek). Telefonische toelichting en nazorg inbegrepen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aanvraagformulier -->
+    <section class="section section-alt" id="aanvragen">
+        <div class="container" style="max-width:760px;">
+            <div class="section-header reveal">
+                <span class="section-label">Aanvragen</span>
+                <h2 class="section-title">Vraag uw berekening aan</h2>
+                <p class="section-subtitle">Vul onderstaand formulier in. U ontvangt binnen 1 werkdag een reactie met offerte en doorlooptijd.</p>
+            </div>
+
+            <form id="calcForm" onsubmit="submitCalcRequest(event)" style="background:white;border-radius:12px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.05);">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+                    <div>
+                        <label style="display:block;font-size:0.85rem;color:var(--gray-mid);margin-bottom:6px;">Voornaam *</label>
+                        <input type="text" id="firstName" required style="width:100%;padding:10px 12px;border:1px solid #E5E5EA;border-radius:8px;font-size:0.95rem;box-sizing:border-box;">
+                    </div>
+                    <div>
+                        <label style="display:block;font-size:0.85rem;color:var(--gray-mid);margin-bottom:6px;">Achternaam *</label>
+                        <input type="text" id="lastName" required style="width:100%;padding:10px 12px;border:1px solid #E5E5EA;border-radius:8px;font-size:0.95rem;box-sizing:border-box;">
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+                    <div>
+                        <label style="display:block;font-size:0.85rem;color:var(--gray-mid);margin-bottom:6px;">Bedrijf *</label>
+                        <input type="text" id="company" required style="width:100%;padding:10px 12px;border:1px solid #E5E5EA;border-radius:8px;font-size:0.95rem;box-sizing:border-box;">
+                    </div>
+                    <div>
+                        <label style="display:block;font-size:0.85rem;color:var(--gray-mid);margin-bottom:6px;">Telefoon</label>
+                        <input type="tel" id="phone" style="width:100%;padding:10px 12px;border:1px solid #E5E5EA;border-radius:8px;font-size:0.95rem;box-sizing:border-box;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom:16px;">
+                    <label style="display:block;font-size:0.85rem;color:var(--gray-mid);margin-bottom:6px;">Zakelijk e-mail *</label>
+                    <input type="email" id="email" required style="width:100%;padding:10px 12px;border:1px solid #E5E5EA;border-radius:8px;font-size:0.95rem;box-sizing:border-box;">
+                </div>
+
+                <div style="margin-bottom:16px;">
+                    <label style="display:block;font-size:0.85rem;color:var(--gray-mid);margin-bottom:6px;">Welke berekening(en)? *</label>
+                    <div style="display:flex;gap:16px;flex-wrap:wrap;padding:6px 0;">
+                        <label style="display:flex;align-items:center;gap:6px;font-size:0.9rem;cursor:pointer;"><input type="checkbox" name="calcType" value="Lichtberekening"> Lichtberekening</label>
+                        <label style="display:flex;align-items:center;gap:6px;font-size:0.9rem;cursor:pointer;"><input type="checkbox" name="calcType" value="Kabelberekening"> Kabelberekening</label>
+                        <label style="display:flex;align-items:center;gap:6px;font-size:0.9rem;cursor:pointer;"><input type="checkbox" name="calcType" value="PV-installatie & opbrengst"> PV-installatie &amp; opbrengst</label>
+                        <label style="display:flex;align-items:center;gap:6px;font-size:0.9rem;cursor:pointer;"><input type="checkbox" name="calcType" value="Anders"> Anders</label>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:16px;">
+                    <label style="display:block;font-size:0.85rem;color:var(--gray-mid);margin-bottom:6px;">Projectomschrijving *</label>
+                    <textarea id="description" rows="4" required placeholder="Type project (kantoor, industrie, woningbouw, etc.), grootte (m2 / aantal groepen / kWp), gewenste leverdatum, eventuele bijlagen beschikbaar..." style="width:100%;padding:10px 12px;border:1px solid #E5E5EA;border-radius:8px;font-size:0.95rem;box-sizing:border-box;resize:vertical;"></textarea>
+                </div>
+
+                <p id="formStatus" style="font-size:0.9rem;margin-bottom:12px;"></p>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:14px;font-size:1rem;">
+                    Aanvraag versturen
+                </button>
+                <p style="font-size:0.75rem;color:var(--gray-mid);text-align:center;margin-top:12px;">Binnen 1 werkdag reactie. Geen verplichtingen.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container" style="max-width:860px;">
+            <div class="section-header reveal">
+                <span class="section-label">Veelgestelde vragen</span>
+                <h2 class="section-title">Alles over onze berekeningen</h2>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Wat is een lichtberekening en wanneer heb ik die nodig?</summary>
+                    <p>Een lichtberekening toont aan of een verlichtingsinstallatie voldoet aan de norm NEN-EN 12464-1 (werkplekverlichting) of NEN 6088/NEN 1838 (noodverlichting). Nodig bij nieuwbouw, verbouw, aanbesteding of bij een wijziging van werkplekinrichting. Wij leveren Dialux-berekeningen met armatuurkeuze, lichtsterkte-contouren, UGR en gelijkmatigheid.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Wat betekent "kabelberekening fabrikantonafhankelijk"?</summary>
+                    <p>Fabrikantonafhankelijk betekent dat onze kabelberekening niet gebonden is aan een kabelproducent of specifieke software. Wij rekenen conform NEN 1010 en IEC 60364 met objectieve methodes, zodat u een juiste kabeldoorsnede krijgt zonder merk-voorkeur. Dit geeft u volledige vrijheid bij inkoop en aanbesteding.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Wat betekent INTELEC-gecertificeerd?</summary>
+                    <p>INTELEC is het onafhankelijke Nederlandse certificeringsinstituut voor elektrotechnische engineering. Onze berekeningen worden uitgevoerd door een INTELEC-gecertificeerde specialist. Dat garandeert dat het rapport voldoet aan de geldende normen en dat de verantwoordelijke aantoonbaar expertise heeft.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Wat zit er in een PV-opbrengstberekening?</summary>
+                    <p>Een PV-opbrengstberekening geeft inzicht in de verwachte jaaropbrengst (kWh), terugverdientijd, ROI en CO2-besparing van een zonnepaneleninstallatie. Wij nemen locatie, dakhelling, orientatie, schaduwwerking, kabelverlies en omvormerrendement mee. Rapport inclusief stringconfiguratie, omvormeradvies en netinpassingscheck.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Hoe lang duurt een berekening?</summary>
+                    <p>Standaardberekeningen (enkel project, duidelijke input) leveren wij binnen 3-5 werkdagen. Complexere projecten met clash checks, meerdere varianten of optimalisatie-rondes duren 1-3 weken. Neem contact op voor een concrete doorlooptijd voor uw project.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Wat hebben jullie van mij nodig om te beginnen?</summary>
+                    <p><strong>Voor een lichtberekening:</strong> plattegronden (DWG/PDF), plafondhoogtes, gewenste werkplektypes.<br><strong>Voor een kabelberekening:</strong> verdeelinrichtingsoverzicht, gewenste groepen, kabellengtes, omgevingstemperatuur.<br><strong>Voor PV:</strong> daktekening, locatie, gewenste systeemgrootte of budget.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Combineren jullie berekeningen met BIM?</summary>
+                    <p>Ja. Indien uw project in Revit is gemodelleerd kunnen wij de berekeningsresultaten direct terugkoppelen naar het model: lichtarmaturen met lichtpuntparameters, kabeltraces met doorsnedes en groepen, en PV-velden als generic models. Zo blijft uw digitale ontwerp compleet en overdraagbaar.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text">CVL Solutions</div>
+                    <p>Elektrotechnische engineering, BIM-modellering, prefab-solutions en INTELEC-gecertificeerde berekeningen voor utiliteit en woningbouw.</p>
+                </div>
+                <div>
+                    <h4>Diensten</h4>
+                    <div class="footer-links">
+                        <a href="engineering.html">Engineering</a>
+                        <a href="berekeningen.html">Berekeningen</a>
+                        <a href="bim-modellering.html">BIM-Modellering</a>
+                        <a href="prefab-solutions.html">Prefab Solutions</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Info</h4>
+                    <div class="footer-links">
+                        <a href="projecten.html">Projecten</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="algemene-voorwaarden.html">Voorwaarden</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 CVL Solutions</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    async function submitCalcRequest(e) {
+        e.preventDefault();
+        const status = document.getElementById('formStatus');
+        const types = Array.from(document.querySelectorAll('input[name="calcType"]:checked')).map(c => c.value);
+        if (types.length === 0) {
+            status.style.color = '#e53e3e';
+            status.textContent = 'Selecteer minimaal één type berekening.';
+            return;
+        }
+
+        const payload = {
+            firstName: document.getElementById('firstName').value.trim(),
+            lastName: document.getElementById('lastName').value.trim(),
+            company: document.getElementById('company').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            calcTypes: types,
+            description: document.getElementById('description').value.trim()
+        };
+
+        status.style.color = '#666';
+        status.textContent = 'Versturen...';
+
+        // Try the serverless function; fall back to mailto if not available
+        try {
+            const res = await fetch('/.netlify/functions/calc-request', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (res.ok) {
+                status.style.color = '#34C759';
+                status.textContent = 'Bedankt! We nemen binnen 1 werkdag contact op.';
+                document.getElementById('calcForm').reset();
+                return;
+            }
+        } catch (err) { /* fall through */ }
+
+        // Fallback: mailto
+        const subject = encodeURIComponent(`Aanvraag berekening: ${types.join(', ')}`);
+        const body = encodeURIComponent(
+`Naam: ${payload.firstName} ${payload.lastName}
+Bedrijf: ${payload.company}
+E-mail: ${payload.email}
+Telefoon: ${payload.phone}
+Berekeningen: ${types.join(', ')}
+
+Projectomschrijving:
+${payload.description}`
+        );
+        window.location.href = `mailto:info@cvlsolutions.nl?subject=${subject}&body=${body}`;
+        status.style.color = '#34C759';
+        status.textContent = 'Je e-mailprogramma is geopend. Verzend de mail om de aanvraag te voltooien.';
+    }
+    </script>
+</body>
+</html>
