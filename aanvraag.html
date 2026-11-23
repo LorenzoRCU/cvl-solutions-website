@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Sora:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20261123c">
     <meta property="og:image" content="https://cvlsolutions.nl/img/favicon-192.png">
     <style>
         .req-wrap { max-width: 980px; margin: 0 auto; }
@@ -61,7 +61,7 @@
                 <a href="https://lynk3d.netlify.app" target="_blank" rel="noopener">3D-Printservice</a>
                 <a href="prefab-solutions.html">Prefab Solutions</a>
                 <a href="projecten.html">Projecten</a>
-                <a href="aanvraag.html">Aanvragen</a>
+                <a href="aanvraag.html" class="btn btn-sm nav-cta nav-cta-green">Offerte aanvragen</a>
                 <a href="index.html#huur-in" style="color: #34C759; font-weight: 700;">Huur ons in</a>
                 <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Contact</a>
             </nav>
@@ -75,7 +75,7 @@
             <a href="https://lynk3d.netlify.app" target="_blank" rel="noopener">3D-Printservice</a>
             <a href="prefab-solutions.html">Prefab Solutions</a>
             <a href="projecten.html">Projecten</a>
-            <a href="aanvraag.html">Aanvragen</a>
+            <a href="aanvraag.html" style="color: #34C759; font-weight: 700;">Offerte aanvragen &rarr;</a>
             <a href="index.html#huur-in" style="color: #34C759; font-weight: 700;">Huur ons in</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -169,10 +169,22 @@
                                 <option value="">Kies...</option><option>Geen of weinig</option><option>Deels (enkele gelijke lagen/ruimtes)</option><option>Sterk (gelijke verdiepingen, typicals)</option>
                             </select></div>
                     </div>
+                    <div class="form-group"><label for="omschrijving">Korte projectomschrijving</label><textarea id="omschrijving" name="projectomschrijving" rows="3" placeholder="Bijv. vernieuwbouw sportzaal: twee gymzalen, kleedkamers, PV op het dak"></textarea></div>
+                    <div class="form-group"><label for="partners">Overige projectpartners</label><textarea id="partners" name="projectpartners" rows="2" placeholder="Architect, constructeur, W-installateur, BIM-coördinator (naam en bedrijf)"></textarea></div>
                     <div class="form-row-3">
                         <div class="form-group"><label for="start">Gewenste start *</label><input type="date" id="start" name="gewenste_start" required></div>
                         <div class="form-group"><label for="eerste">Eerste levering (optioneel)</label><input type="date" id="eerste" name="eerste_levering"></div>
                         <div class="form-group"><label for="eind">Verwachte oplevering (optioneel)</label><input type="date" id="eind" name="verwachte_oplevering"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="gereed">Liggen de bestanden klaar?</label>
+                            <select id="gereed" name="bestanden_gereed">
+                                <option value="">Kies...</option><option>Ja, we kunnen direct starten</option><option>Binnen een week</option><option>Binnen 2 à 4 weken</option><option>Nog oriënterend</option>
+                            </select></div>
+                        <div class="form-group"><label for="prioriteit">Wat is voor u het belangrijkst?</label>
+                            <select id="prioriteit" name="prioriteit">
+                                <option value="">Kies...</option><option>Clashvrij, gecoördineerd model</option><option>Detailniveau / informatie (LOD/LOI)</option><option>Uitvoeringsgerede tekeningen</option><option>Snelle doorlooptijd</option><option>Scherpe prijs</option>
+                            </select></div>
                     </div>
                 </div>
 
@@ -198,21 +210,50 @@
                             </select></div>
                         <div class="form-group"><label for="revit">Revit-versie</label>
                             <select id="revit" name="revit_versie">
-                                <option value="">Kies...</option><option>Revit 2023</option><option>Revit 2024</option><option>Revit 2025</option><option>Revit 2026</option><option>Geen eis</option>
-                            </select></div>
+                                <option value="">Kies...</option><option>Revit 2024</option><option>Revit 2025</option><option>Revit 2026</option><option>Revit 2027</option><option>Geen eis</option><option value="Anders">Staat er niet tussen</option>
+                            </select>
+                            <input type="text" id="revit_anders" name="revit_versie_anders" placeholder="Vul de versie in" style="display:none; margin-top:8px;"></div>
                         <div class="form-group"><label for="ifc">IFC-versie</label>
                             <select id="ifc" name="ifc_versie">
                                 <option value="">Kies...</option><option>IFC 2x3</option><option>IFC 4</option><option>Geen IFC nodig</option>
                             </select></div>
                     </div>
+                    <span class="group-label">Waarvoor wordt het model gebruikt?</span>
+                    <div class="check-grid">
+                        <label><input type="checkbox" name="gebruik_coordinatie" value="Ja"> Coördinatie / clashcontrole</label>
+                        <label><input type="checkbox" name="gebruik_tekeningen" value="Ja"> Uitvoeringstekeningen</label>
+                        <label><input type="checkbox" name="gebruik_hoeveelheden" value="Ja"> Hoeveelheden / tellijsten</label>
+                        <label><input type="checkbox" name="gebruik_prefab" value="Ja"> Prefab / werkvoorbereiding</label>
+                        <label><input type="checkbox" name="gebruik_beheer" value="Ja"> Beheer en onderhoud (FM)</label>
+                        <label><input type="checkbox" name="gebruik_revisie" value="Ja"> Revisie / as-built</label>
+                    </div>
+                    <span class="group-label">Op te leveren bestandsformaten</span>
+                    <div class="check-grid">
+                        <label><input type="checkbox" name="formaat_rvt" value="Ja"> RVT (Revit)</label>
+                        <label><input type="checkbox" name="formaat_ifc" value="Ja"> IFC</label>
+                        <label><input type="checkbox" name="formaat_nwc" value="Ja"> NWC / NWD (Navisworks)</label>
+                        <label><input type="checkbox" name="formaat_dwg" value="Ja"> DWG</label>
+                        <label><input type="checkbox" name="formaat_pdf" value="Ja"> PDF</label>
+                        <label><input type="checkbox" name="formaat_xlsx" value="Ja"> Excel (tellijsten)</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="nulpunt">Nulpunt / startmodel</label>
+                            <select id="nulpunt" name="nulpunt_startmodel">
+                                <option value="">Kies...</option><option>Startmodel met nulpunt wordt aangeleverd</option><option>Nulpunt staat in BUP / stramienblad</option><option>Nog niet bekend</option>
+                            </select></div>
+                        <div class="form-group"><label for="overleg">Frequentie BIM-/coördinatieoverleg</label>
+                            <select id="overleg" name="overleg_frequentie">
+                                <option value="">Kies...</option><option>Wekelijks</option><option>Tweewekelijks</option><option>Maandelijks</option><option>Op afroep</option><option>Nog niet bekend</option>
+                            </select></div>
+                    </div>
                     <div class="form-row">
                         <div class="form-group"><label for="cde">Uitwisseling / CDE</label>
                             <select id="cde" name="uitwisseling">
-                                <option value="">Kies...</option><option>Autodesk ACC / Forma</option><option>SharePoint</option><option>Dalux</option><option>BIMcollab</option><option>E-mail / overig</option>
+                                <option value="">Kies...</option><option>Autodesk Forma (voorheen ACC / BIM 360)</option><option>SharePoint</option><option>Dalux</option><option>BIMcollab</option><option>E-mail / overig</option>
                             </select></div>
                         <div class="form-group"><label for="controle">Modelcontrole met</label>
                             <select id="controle" name="modelcontrole">
-                                <option value="">Kies...</option><option>Solibri</option><option>BIMcollab Zoom</option><option>Navisworks</option><option>Anders / onbekend</option>
+                                <option value="">Kies...</option><option>Solibri</option><option>BIMcollab Zoom</option><option>Autodesk Forma Model Coordination (voorheen ACC)</option><option>Navisworks</option><option>Anders / onbekend</option>
                             </select></div>
                     </div>
                 </div>
@@ -225,6 +266,8 @@
                     <div class="radio-row">
                         <label><input type="radio" name="bron_ontwerp" value="2D DWG / PDF" required> 2D DWG / PDF</label>
                         <label><input type="radio" name="bron_ontwerp" value="IFC / Revit-adviesmodel"> IFC / Revit-adviesmodel</label>
+                        <label><input type="radio" name="bron_ontwerp" value="Puntenwolk / scan (bestaand)"> Puntenwolk / scan (bestaand)</label>
+                        <label><input type="radio" name="bron_ontwerp" value="Schetsen / foto's"> Schetsen / foto's</label>
                         <label><input type="radio" name="bron_ontwerp" value="Nog geen ontwerp (engineering gevraagd)"> Nog geen ontwerp (engineering gevraagd)</label>
                     </div>
                     <span class="group-label">Status van het ontwerp</span>
@@ -283,10 +326,18 @@
                     <div class="form-row-3">
                         <div class="form-group"><label for="aantal_tekeningen">Aantal tekeningen (indicatief)</label><input type="number" id="aantal_tekeningen" name="aantal_tekeningen" min="0"></div>
                         <div class="form-group"><label for="clashrondes">Aantal clashrondes</label><input type="number" id="clashrondes" name="aantal_clashrondes" min="0"></div>
-                        <div class="form-group"><label for="titelblok">Titelblok</label>
+                        <div class="form-group"><label for="titelblok">Titelblok (onderhoek) <a href="#" id="tbExample" style="color: var(--accent); font-weight: 500;">zie voorbeeld</a></label>
                             <select id="titelblok" name="titelblok">
                                 <option value="">Kies...</option><option>CVL Solutions</option><option>Eigen titelblok (aanleveren)</option><option>'In opdracht van' vermelding</option>
                             </select></div>
+                    </div>
+                </div>
+
+                <div id="tbModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:1000; align-items:center; justify-content:center; padding:16px;">
+                    <div style="background:#fff; border-radius:12px; padding:16px; max-width:960px; width:100%;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;"><strong style="color:var(--navy);">Voorbeeld onderhoek CVL Solutions</strong><a href="#" id="tbClose" style="color:var(--accent);">Sluiten</a></div>
+                        <img src="img/titelblok-cvl-voorbeeld.png" alt="Voorbeeld titelblok CVL Solutions met vermelding In opdracht van" style="width:100%; height:auto; border:1px solid #eee;">
+                        <p style="font-size:0.85rem; color:var(--gray-dark); margin-top:8px;">Standaard leveren wij in het CVL-titelblok met de vermelding 'In opdracht van'. Op verzoek nemen wij uw logo of titelblok op.</p>
                     </div>
                 </div>
 
@@ -316,6 +367,7 @@
                             </select></div>
                         <div class="form-group"><label for="budget">Budgetindicatie (optioneel)</label><input type="text" id="budget" name="budget" placeholder="Bijv. € 5.000 - 10.000"></div>
                     </div>
+                    <div class="form-group"><label for="risicos">Bekende risico's of afhankelijkheden</label><textarea id="risicos" name="risicos" rows="2" placeholder="Bijv. ontwerp nog in concept, input van derden volgt later, strakke deadline"></textarea></div>
                     <div class="form-group"><label for="opmerkingen">Opmerkingen / aanvullende wensen</label><textarea id="opmerkingen" name="opmerkingen" rows="5" placeholder="Bijzonderheden, bekende knelpunten, planning, ..."></textarea></div>
                     <div class="form-group">
                         <label style="display:flex; gap:8px; font-weight:400; align-items:flex-start;"><input type="checkbox" name="privacy_akkoord" value="Ja" required style="width:auto; margin-top:4px;"> Ik ga akkoord met de verwerking van mijn gegevens volgens de <a href="privacy-policy.html" target="_blank" style="color: var(--accent);">privacyverklaring</a>. *</label>
@@ -351,6 +403,12 @@
     <script>
         (function () {
             var form = document.getElementById('reqForm');
+            var rv = document.getElementById('revit'), rva = document.getElementById('revit_anders');
+            rv.addEventListener('change', function () { var on = rv.value === 'Anders'; rva.style.display = on ? 'block' : 'none'; rva.required = on; if (!on) rva.value = ''; });
+            var modal = document.getElementById('tbModal');
+            document.getElementById('tbExample').addEventListener('click', function (e) { e.preventDefault(); modal.style.display = 'flex'; });
+            document.getElementById('tbClose').addEventListener('click', function (e) { e.preventDefault(); modal.style.display = 'none'; });
+            modal.addEventListener('click', function (e) { if (e.target === modal) modal.style.display = 'none'; });
             var err = document.getElementById('reqError');
             var t0 = Date.now();
             var MAX_BYTES = 8 * 1024 * 1024;
