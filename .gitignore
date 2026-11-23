@@ -1,2 +1,5 @@
 # Local Netlify folder
 .netlify
+
+# Lokale cookie-jars / sessies nooit publiceren
+cookies*.txt

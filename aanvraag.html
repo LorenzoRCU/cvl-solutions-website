@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Project aanvragen | CVL Solutions | BIM-modellering en E-engineering</title>
+    <meta name="description" content="Vraag een offerte aan voor BIM-modellering of elektrotechnische engineering. Vul uw projectgegevens, BIM-eisen en scope in en upload uw tekeningen; u ontvangt binnen 2 werkdagen een passend voorstel.">
+    <meta property="og:title" content="Project aanvragen | CVL Solutions">
+    <meta property="og:description" content="Projectaanvraag voor BIM-modellering en E-engineering: projectgegevens, BIM-eisen, scope en bestanden in één keer.">
+    <meta property="og:url" content="https://www.cvlsolutions.nl/aanvraag">
+    <link rel="canonical" href="https://www.cvlsolutions.nl/aanvraag">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Sora:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <meta property="og:image" content="https://cvlsolutions.nl/img/favicon-192.png">
+    <style>
+        .req-wrap { max-width: 980px; margin: 0 auto; }
+        .req-card { background: #fff; border: 1px solid #e6e6ee; border-radius: 14px; padding: 28px; margin-bottom: 24px; box-shadow: 0 4px 18px rgba(0, 29, 75, 0.05); }
+        .req-card h3 { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; color: var(--navy); }
+        .req-card h3 .step { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.9rem; flex-shrink: 0; }
+        .req-card .hint { color: var(--gray-dark); font-size: 0.88rem; margin-bottom: 20px; }
+        .form-row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .check-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 16px; margin-bottom: 20px; }
+        .check-grid label, .radio-row label { display: flex; align-items: flex-start; gap: 8px; font-weight: 400; font-size: 0.9rem; cursor: pointer; margin: 0; }
+        .check-grid input, .radio-row input { width: auto; margin-top: 3px; }
+        .group-label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--navy); }
+        .radio-row { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 20px; }
+        .scope-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 0.9rem; }
+        .scope-table th { background: var(--navy); color: #fff; text-align: left; padding: 8px 10px; font-weight: 600; }
+        .scope-table th.c, .scope-table td.c { text-align: center; width: 110px; }
+        .scope-table td { padding: 8px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+        .scope-table td small { color: var(--gray-dark); }
+        .scope-table input { width: auto; }
+        .file-note { font-size: 0.85rem; color: var(--gray-dark); margin-top: -10px; margin-bottom: 16px; }
+        .hp-field { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+        .req-error { display: none; background: #fdecec; color: #a12a2a; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; font-size: 0.9rem; }
+        .req-intro { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+        .req-intro div { background: #F2F2F7; border-radius: 12px; padding: 18px; font-size: 0.9rem; }
+        .req-intro strong { display: block; color: var(--navy); margin-bottom: 4px; }
+        @media (max-width: 760px) {
+            .form-row-3, .check-grid, .req-intro { grid-template-columns: 1fr; }
+            .req-card { padding: 20px 16px; }
+            .scope-table th.c, .scope-table td.c { width: 70px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">CVL Solutions</a>
+            <nav class="nav-links">
+                <a href="engineering.html">Engineering</a>
+                <a href="berekeningen.html">Berekeningen</a>
+                <a href="bim-modellering.html">BIM-Modellering</a>
+                <a href="https://lynk3d.netlify.app" target="_blank" rel="noopener">3D-Printservice</a>
+                <a href="prefab-solutions.html">Prefab Solutions</a>
+                <a href="projecten.html">Projecten</a>
+                <a href="aanvraag.html">Aanvragen</a>
+                <a href="index.html#huur-in" style="color: #34C759; font-weight: 700;">Huur ons in</a>
+                <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Contact</a>
+            </nav>
+            <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+        <div class="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="engineering.html">Engineering</a>
+            <a href="berekeningen.html">Berekeningen</a>
+            <a href="bim-modellering.html">BIM-Modellering</a>
+            <a href="https://lynk3d.netlify.app" target="_blank" rel="noopener">3D-Printservice</a>
+            <a href="prefab-solutions.html">Prefab Solutions</a>
+            <a href="projecten.html">Projecten</a>
+            <a href="aanvraag.html">Aanvragen</a>
+            <a href="index.html#huur-in" style="color: #34C759; font-weight: 700;">Huur ons in</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-label" style="color: rgba(255,255,255,0.5);">Projectaanvraag</span>
+            <h1>Vraag een <span class="highlight">voorstel</span> aan</h1>
+            <p>Hoe completer uw aanvraag, hoe scherper ons voorstel. Vul in wat u weet; wat nog niet bekend is, mag u leeg laten. U ontvangt binnen 2 werkdagen een reactie.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container req-wrap">
+
+            <div class="req-intro">
+                <div><strong>Duidelijke scope</strong>Per onderdeel geeft u aan wat u van ons verwacht. Zo vergelijkt u offertes op hetzelfde eindproduct.</div>
+                <div><strong>Twee varianten</strong>U ontvangt een basisvariant (componenten in het model) en een complete variant (uitvoeringsmodel, alles inbegrepen).</div>
+                <div><strong>Volgens uw BIM-eisen</strong>Wij modelleren conform uw BIM-protocol, BUP en ILS, in de gevraagde Revit-versie en het gevraagde LOD.</div>
+            </div>
+
+            <form name="projectaanvraag" method="POST" action="/aanvraag-verzonden.html" enctype="multipart/form-data"
+                  data-netlify="true" netlify-honeypot="website_url" data-netlify-recaptcha="true" id="reqForm" novalidate>
+                <input type="hidden" name="form-name" value="projectaanvraag">
+                <p class="hp-field" aria-hidden="true"><label>Laat dit veld leeg <input name="website_url" tabindex="-1" autocomplete="off"></label></p>
+                <input type="hidden" name="ingevuld_in_seconden" id="fillTime" value="">
+
+                <!-- 1. Contact -->
+                <div class="req-card">
+                    <h3><span class="step">1</span>Uw gegevens</h3>
+                    <p class="hint">Wie is de aanvrager en wie wordt contractpartij?</p>
+                    <div class="form-row">
+                        <div class="form-group"><label for="naam">Naam *</label><input type="text" id="naam" name="naam" required autocomplete="name"></div>
+                        <div class="form-group"><label for="bedrijf">Bedrijf *</label><input type="text" id="bedrijf" name="bedrijf" required autocomplete="organization"></div>
+                    </div>
+                    <div class="form-row-3">
+                        <div class="form-group"><label for="functie">Functie</label><input type="text" id="functie" name="functie"></div>
+                        <div class="form-group"><label for="email">E-mail *</label><input type="email" id="email" name="email" required autocomplete="email"></div>
+                        <div class="form-group"><label for="telefoon">Telefoon</label><input type="tel" id="telefoon" name="telefoon" autocomplete="tel"></div>
+                    </div>
+                    <span class="group-label">Uw rol in het project *</span>
+                    <div class="radio-row">
+                        <label><input type="radio" name="rol" value="Opdrachtgever / eigenaar" required> Opdrachtgever / eigenaar</label>
+                        <label><input type="radio" name="rol" value="Aannemer"> Aannemer</label>
+                        <label><input type="radio" name="rol" value="Installateur"> Installateur</label>
+                        <label><input type="radio" name="rol" value="Adviseur"> Adviseur</label>
+                        <label><input type="radio" name="rol" value="BIM-bureau / tussenpersoon"> BIM-bureau / tussenpersoon</label>
+                        <label><input type="radio" name="rol" value="Anders"> Anders</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="contractpartij">Contractpartij (als dat niet uw bedrijf is)</label><input type="text" id="contractpartij" name="contractpartij" placeholder="Bijv. de aannemer of eindklant"></div>
+                        <div class="form-group"><label for="ontwerper">Wie heeft het E-ontwerp gemaakt?</label><input type="text" id="ontwerper" name="ontwerper_e" placeholder="Adviseur / installateur / nog niet bekend"></div>
+                    </div>
+                </div>
+
+                <!-- 2. Project -->
+                <div class="req-card">
+                    <h3><span class="step">2</span>Project</h3>
+                    <p class="hint">De basisgegevens bepalen de omvang van het werk.</p>
+                    <div class="form-row">
+                        <div class="form-group"><label for="projectnaam">Projectnaam *</label><input type="text" id="projectnaam" name="projectnaam" required></div>
+                        <div class="form-group"><label for="locatie">Locatie (plaats) *</label><input type="text" id="locatie" name="locatie" required></div>
+                    </div>
+                    <div class="form-row-3">
+                        <div class="form-group"><label for="projecttype">Projecttype *</label>
+                            <select id="projecttype" name="projecttype" required>
+                                <option value="">Kies...</option>
+                                <option>Kantoor</option><option>Zorg / ziekenhuis</option><option>Onderwijs</option>
+                                <option>Woningbouw</option><option>Hotel</option><option>Sport / sporthal</option>
+                                <option>Distributiecentrum / industrie</option><option>Utiliteit overig</option>
+                            </select></div>
+                        <div class="form-group"><label for="projectfase">Projectfase *</label>
+                            <select id="projectfase" name="projectfase" required>
+                                <option value="">Kies...</option>
+                                <option>VO - Voorlopig ontwerp</option><option>DO - Definitief ontwerp</option>
+                                <option>TO - Technisch ontwerp</option><option>UO - Uitvoeringsontwerp</option>
+                                <option>Uitvoering / revisie (as-built)</option>
+                            </select></div>
+                        <div class="form-group"><label for="bouwsoort">Nieuwbouw of bestaand</label>
+                            <select id="bouwsoort" name="bouwsoort">
+                                <option value="">Kies...</option><option>Nieuwbouw</option><option>Renovatie / transformatie</option><option>Combinatie</option>
+                            </select></div>
+                    </div>
+                    <div class="form-row-3">
+                        <div class="form-group"><label for="bvo">Bruto vloeroppervlak (m²)</label><input type="number" id="bvo" name="bvo_m2" min="0" step="1"></div>
+                        <div class="form-group"><label for="bouwlagen">Aantal bouwlagen</label><input type="number" id="bouwlagen" name="aantal_bouwlagen" min="0" step="1"></div>
+                        <div class="form-group"><label for="herhaling">Herhaling</label>
+                            <select id="herhaling" name="herhaling">
+                                <option value="">Kies...</option><option>Geen of weinig</option><option>Deels (enkele gelijke lagen/ruimtes)</option><option>Sterk (gelijke verdiepingen, typicals)</option>
+                            </select></div>
+                    </div>
+                    <div class="form-row-3">
+                        <div class="form-group"><label for="start">Gewenste start *</label><input type="date" id="start" name="gewenste_start" required></div>
+                        <div class="form-group"><label for="eerste">Eerste levering (optioneel)</label><input type="date" id="eerste" name="eerste_levering"></div>
+                        <div class="form-group"><label for="eind">Verwachte oplevering (optioneel)</label><input type="date" id="eind" name="verwachte_oplevering"></div>
+                    </div>
+                </div>
+
+                <!-- 3. BIM-eisen -->
+                <div class="req-card">
+                    <h3><span class="step">3</span>BIM-eisen</h3>
+                    <p class="hint">Aan welke afspraken moet het model voldoen? Upload de documenten bij stap 6.</p>
+                    <span class="group-label">Welke documenten zijn van toepassing?</span>
+                    <div class="check-grid">
+                        <label><input type="checkbox" name="eis_bim_protocol" value="Ja"> BIM-protocol</label>
+                        <label><input type="checkbox" name="eis_bup" value="Ja"> BIM-uitvoeringsplan (BUP)</label>
+                        <label><input type="checkbox" name="eis_ils" value="Ja"> ILS (informatieleveringsspecificatie)</label>
+                        <label><input type="checkbox" name="eis_naamgeving" value="Ja"> Naamgevingsconventie (bijv. NLRS / NAA.K.T.)</label>
+                        <label><input type="checkbox" name="eis_pset" value="Ja"> Eigen Psets / parameters</label>
+                        <label><input type="checkbox" name="eis_onbekend" value="Ja"> Nog niet bekend</label>
+                    </div>
+                    <div class="form-row-3">
+                        <div class="form-group"><label for="lod">Vereist LOD *</label>
+                            <select id="lod" name="lod" required>
+                                <option value="">Kies...</option>
+                                <option>LOD 200</option><option>LOD 300</option><option>LOD 350</option>
+                                <option>LOD 400</option><option>LOD 500 (as-built)</option><option>Volgens BUP/ILS</option><option>Weet ik niet</option>
+                            </select></div>
+                        <div class="form-group"><label for="revit">Revit-versie</label>
+                            <select id="revit" name="revit_versie">
+                                <option value="">Kies...</option><option>Revit 2023</option><option>Revit 2024</option><option>Revit 2025</option><option>Revit 2026</option><option>Geen eis</option>
+                            </select></div>
+                        <div class="form-group"><label for="ifc">IFC-versie</label>
+                            <select id="ifc" name="ifc_versie">
+                                <option value="">Kies...</option><option>IFC 2x3</option><option>IFC 4</option><option>Geen IFC nodig</option>
+                            </select></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="cde">Uitwisseling / CDE</label>
+                            <select id="cde" name="uitwisseling">
+                                <option value="">Kies...</option><option>Autodesk ACC / Forma</option><option>SharePoint</option><option>Dalux</option><option>BIMcollab</option><option>E-mail / overig</option>
+                            </select></div>
+                        <div class="form-group"><label for="controle">Modelcontrole met</label>
+                            <select id="controle" name="modelcontrole">
+                                <option value="">Kies...</option><option>Solibri</option><option>BIMcollab Zoom</option><option>Navisworks</option><option>Anders / onbekend</option>
+                            </select></div>
+                    </div>
+                </div>
+
+                <!-- 4. Beschikbare input -->
+                <div class="req-card">
+                    <h3><span class="step">4</span>Beschikbare input</h3>
+                    <p class="hint">Wat ligt er al, en wat volgt nog? Dit bepaalt hoeveel rondes er nodig zijn.</p>
+                    <span class="group-label">Bron van het E-ontwerp *</span>
+                    <div class="radio-row">
+                        <label><input type="radio" name="bron_ontwerp" value="2D DWG / PDF" required> 2D DWG / PDF</label>
+                        <label><input type="radio" name="bron_ontwerp" value="IFC / Revit-adviesmodel"> IFC / Revit-adviesmodel</label>
+                        <label><input type="radio" name="bron_ontwerp" value="Nog geen ontwerp (engineering gevraagd)"> Nog geen ontwerp (engineering gevraagd)</label>
+                    </div>
+                    <span class="group-label">Status van het ontwerp</span>
+                    <div class="radio-row">
+                        <label><input type="radio" name="status_ontwerp" value="Definitief"> Definitief</label>
+                        <label><input type="radio" name="status_ontwerp" value="Concept"> Concept</label>
+                        <label><input type="radio" name="status_ontwerp" value="Wijzigingen nog niet verwerkt"> Er zijn wijzigingen die nog niet verwerkt zijn</label>
+                    </div>
+                    <span class="group-label">Wat is beschikbaar?</span>
+                    <div class="check-grid">
+                        <label><input type="checkbox" name="input_bwk_model" value="Ja"> Bouwkundig model (IFC/RVT)</label>
+                        <label><input type="checkbox" name="input_constructie" value="Ja"> Constructief model</label>
+                        <label><input type="checkbox" name="input_w_model" value="Ja"> W-model / W-tekeningen</label>
+                        <label><input type="checkbox" name="input_bestek" value="Ja"> Bestek / technische omschrijving / TPvE</label>
+                        <label><input type="checkbox" name="input_lichtplan" value="Ja"> Lichtplan / armaturenlijst</label>
+                        <label><input type="checkbox" name="input_groepen" value="Ja"> Groepsindeling / kastscheiding</label>
+                        <label><input type="checkbox" name="input_hoogtes" value="Ja"> Montage- en goothoogtes</label>
+                        <label><input type="checkbox" name="input_w_vermogens" value="Ja"> W-aansluitwaarden / vermogens</label>
+                        <label><input type="checkbox" name="input_bestaand" value="Ja"> Gegevens bestaande installatie</label>
+                    </div>
+                    <span class="group-label">Welke installaties?</span>
+                    <div class="check-grid">
+                        <label><input type="checkbox" name="inst_kracht" value="Ja"> Krachtstroom en aarding</label>
+                        <label><input type="checkbox" name="inst_verlichting" value="Ja"> Verlichting en noodverlichting</label>
+                        <label><input type="checkbox" name="inst_data" value="Ja"> Data / zwakstroom</label>
+                        <label><input type="checkbox" name="inst_bmi" value="Ja"> Brandmeld- en ontruimingsinstallatie</label>
+                        <label><input type="checkbox" name="inst_beveiliging" value="Ja"> Inbraak, CCTV en toegang</label>
+                        <label><input type="checkbox" name="inst_kanalisatie" value="Ja"> Kabelgoten / kanalisatie</label>
+                        <label><input type="checkbox" name="inst_verdelers" value="Ja"> Verdelers / railkokers</label>
+                        <label><input type="checkbox" name="inst_pv" value="Ja"> PV / laadpalen</label>
+                        <label><input type="checkbox" name="inst_overig" value="Ja"> Overig (zie opmerkingen)</label>
+                    </div>
+                </div>
+
+                <!-- 5. Scope -->
+                <div class="req-card">
+                    <h3><span class="step">5</span>Wat verwacht u van ons?</h3>
+                    <p class="hint">Kruis per onderdeel aan of het bij ons moet liggen, of door u of een derde wordt gedaan. Wat leeg blijft, nemen wij niet op.</p>
+                    <table class="scope-table">
+                        <thead><tr><th>Onderdeel</th><th class="c">Door CVL</th><th class="c">Door u / derde</th></tr></thead>
+                        <tbody>
+                        <tr><td>Componenten en kabelgoten modelleren<br><small>1-op-1 vanuit het aangeleverde ontwerp</small></td><td class="c"><input type="radio" name="scope_modelleren" value="CVL"></td><td class="c"><input type="radio" name="scope_modelleren" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>E-engineering / ontwerp<br><small>Ontwerp uitwerken, berekeningen (licht, kabel, kortsluiting), schema's</small></td><td class="c"><input type="radio" name="scope_engineering" value="CVL"></td><td class="c"><input type="radio" name="scope_engineering" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>Groepen / stroomkringen in het model</td><td class="c"><input type="radio" name="scope_groepen" value="CVL"></td><td class="c"><input type="radio" name="scope_groepen" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>Later aangeleverde input verwerken<br><small>Lichtplan, hoogtes, ontwerpwijzigingen</small></td><td class="c"><input type="radio" name="scope_latere_input" value="CVL"></td><td class="c"><input type="radio" name="scope_latere_input" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>Afstemming met ontwerper / installateur</td><td class="c"><input type="radio" name="scope_afstemming" value="CVL"></td><td class="c"><input type="radio" name="scope_afstemming" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>Clashrondes verwerken</td><td class="c"><input type="radio" name="scope_clash" value="CVL"></td><td class="c"><input type="radio" name="scope_clash" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>Plattegronden met tags</td><td class="c"><input type="radio" name="scope_tags" value="CVL"></td><td class="c"><input type="radio" name="scope_tags" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>Hoogtetags</td><td class="c"><input type="radio" name="scope_hoogtetags" value="CVL"></td><td class="c"><input type="radio" name="scope_hoogtetags" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>Maatvoering vanuit kolommen, wanden en stramien</td><td class="c"><input type="radio" name="scope_maatvoering" value="CVL"></td><td class="c"><input type="radio" name="scope_maatvoering" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>Aanzichten, doorsneden en details</td><td class="c"><input type="radio" name="scope_aanzichten" value="CVL"></td><td class="c"><input type="radio" name="scope_aanzichten" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>Bestaande installatie modelleren</td><td class="c"><input type="radio" name="scope_bestaand" value="CVL"></td><td class="c"><input type="radio" name="scope_bestaand" value="Opdrachtgever/derde"></td></tr>
+                        <tr><td>Revisie / as-built na uitvoering</td><td class="c"><input type="radio" name="scope_revisie" value="CVL"></td><td class="c"><input type="radio" name="scope_revisie" value="Opdrachtgever/derde"></td></tr>
+                        </tbody>
+                    </table>
+                    <div class="form-row-3">
+                        <div class="form-group"><label for="aantal_tekeningen">Aantal tekeningen (indicatief)</label><input type="number" id="aantal_tekeningen" name="aantal_tekeningen" min="0"></div>
+                        <div class="form-group"><label for="clashrondes">Aantal clashrondes</label><input type="number" id="clashrondes" name="aantal_clashrondes" min="0"></div>
+                        <div class="form-group"><label for="titelblok">Titelblok</label>
+                            <select id="titelblok" name="titelblok">
+                                <option value="">Kies...</option><option>CVL Solutions</option><option>Eigen titelblok (aanleveren)</option><option>'In opdracht van' vermelding</option>
+                            </select></div>
+                    </div>
+                </div>
+
+                <!-- 6. Bestanden -->
+                <div class="req-card">
+                    <h3><span class="step">6</span>Bestanden</h3>
+                    <p class="hint">Tekeningen, modellen, BUP, ILS, BIM-protocol: alle bestandstypen zijn welkom (DWG, PDF, IFC, RVT, ZIP, Excel, enz.).</p>
+                    <div class="form-row">
+                        <div class="form-group"><label for="bestand1">Bestand 1</label><input type="file" id="bestand1" name="bestand_1"></div>
+                        <div class="form-group"><label for="bestand2">Bestand 2</label><input type="file" id="bestand2" name="bestand_2"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="bestand3">Bestand 3</label><input type="file" id="bestand3" name="bestand_3"></div>
+                        <div class="form-group"><label for="bestand4">Bestand 4</label><input type="file" id="bestand4" name="bestand_4"></div>
+                    </div>
+                    <p class="file-note">Upload in totaal maximaal 8 MB. Grotere bestanden of complete mappen? Zet ze in een ZIP of deel een downloadlink hieronder.</p>
+                    <div class="form-group"><label for="link">Downloadlink (WeTransfer, SharePoint, ACC, Google Drive, ...)</label><input type="url" id="link" name="downloadlink" placeholder="https://"></div>
+                </div>
+
+                <!-- 7. Commercieel en opmerkingen -->
+                <div class="req-card">
+                    <h3><span class="step">7</span>Tot slot</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label for="prijsvorm">Voorkeur prijsvorm</label>
+                            <select id="prijsvorm" name="prijsvorm">
+                                <option value="">Kies...</option><option>Vaste prijs</option><option>Uurbasis (nacalculatie)</option><option>Geen voorkeur</option>
+                            </select></div>
+                        <div class="form-group"><label for="budget">Budgetindicatie (optioneel)</label><input type="text" id="budget" name="budget" placeholder="Bijv. € 5.000 - 10.000"></div>
+                    </div>
+                    <div class="form-group"><label for="opmerkingen">Opmerkingen / aanvullende wensen</label><textarea id="opmerkingen" name="opmerkingen" rows="5" placeholder="Bijzonderheden, bekende knelpunten, planning, ..."></textarea></div>
+                    <div class="form-group">
+                        <label style="display:flex; gap:8px; font-weight:400; align-items:flex-start;"><input type="checkbox" name="privacy_akkoord" value="Ja" required style="width:auto; margin-top:4px;"> Ik ga akkoord met de verwerking van mijn gegevens volgens de <a href="privacy-policy.html" target="_blank" style="color: var(--accent);">privacyverklaring</a>. *</label>
+                    </div>
+                    <div data-netlify-recaptcha="true" style="margin-bottom: 16px;"></div>
+                    <div class="req-error" id="reqError"></div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Aanvraag versturen</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="color: white;">CVL Solutions</div>
+                    <p>Specialist in elektrotechnische engineering, BIM-modellering en prefab solutions. Gevestigd in Amersfoort.</p>
+                </div>
+                <div><h4>Diensten</h4><div class="footer-links"><a href="engineering.html">Engineering</a><a href="bim-modellering.html">BIM-Modellering</a><a href="prefab-solutions.html">Prefab Solutions</a><a href="https://lynk3d.netlify.app" target="_blank" rel="noopener">3D-Printservice</a></div></div>
+                <div><h4>Contact</h4><div class="footer-links"><a href="tel:+31613277621">06 1327 7621</a><a href="mailto:info@cvlsolutions.nl">info@cvlsolutions.nl</a><a href="aanvraag.html">Project aanvragen</a></div></div>
+                <div><h4>Adres</h4><div class="footer-links"><a>Databankweg 26</a><a>3821 AL Amersfoort</a><a>Nederland</a></div></div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 CVL Solutions. Alle rechten voorbehouden.</span>
+                <div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="algemene-voorwaarden.html">Algemene Voorwaarden</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        (function () {
+            var form = document.getElementById('reqForm');
+            var err = document.getElementById('reqError');
+            var t0 = Date.now();
+            var MAX_BYTES = 8 * 1024 * 1024;
+            function fail(msg) { err.textContent = msg; err.style.display = 'block'; err.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+            form.addEventListener('submit', function (e) {
+                err.style.display = 'none';
+                var secs = Math.round((Date.now() - t0) / 1000);
+                document.getElementById('fillTime').value = secs;
+                // Bots vullen razendsnel in of raken het verborgen veld aan
+                if (secs < 15 || form.website_url.value) { e.preventDefault(); fail('Er ging iets mis. Probeer het over een moment opnieuw.'); return; }
+                if (!form.checkValidity()) { e.preventDefault(); form.reportValidity(); return; }
+                var total = 0;
+                ['bestand1', 'bestand2', 'bestand3', 'bestand4'].forEach(function (id) {
+                    var f = document.getElementById(id).files[0]; if (f) total += f.size;
+                });
+                if (total > MAX_BYTES) { e.preventDefault(); fail('De bestanden zijn samen groter dan 8 MB. Zet ze in een ZIP of deel een downloadlink.'); return; }
+                var start = document.getElementById('start').value, eind = document.getElementById('eind').value;
+                if (start && eind && eind < start) { e.preventDefault(); fail('De verwachte oplevering ligt vóór de gewenste start.'); return; }
+            });
+        })();
+    </script>
+</body>
+</html>
