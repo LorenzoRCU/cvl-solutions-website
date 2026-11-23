@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Sora:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20261123c">
+    <link rel="stylesheet" href="css/style.css?v=20261123i">
     <meta property="og:image" content="https://cvlsolutions.nl/img/favicon-192.png">
     <style>
         .req-wrap { max-width: 980px; margin: 0 auto; }
@@ -53,29 +53,37 @@
     <!-- Header -->
     <header class="header">
         <div class="container header-inner">
-            <a href="index.html" class="logo">CVL Solutions</a>
-            <nav class="nav-links">
-                <a href="engineering.html">Engineering</a>
-                <a href="berekeningen.html">Berekeningen</a>
-                <a href="bim-modellering.html">BIM-Modellering</a>
-                <a href="prefab-solutions.html">Prefab Solutions</a>
+            <a href="index.html" class="logo logo-stack" aria-label="CVL Solutions - home"><span class="logo-main">CVL</span><span class="logo-sub">SOLUTIONS</span></a>
+            <nav class="nav-links" aria-label="Hoofdmenu">
+                <div class="nav-dropdown">
+                    <button type="button" class="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">Diensten <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="nav-dd-menu">
+                        <a href="engineering.html">Engineering</a>
+                        <a href="berekeningen.html">Berekeningen</a>
+                        <a href="bim-modellering.html">BIM-Modellering</a>
+                        <a href="prefab-solutions.html">Prefab Solutions</a>
+                        <a href="index.html#huur-in">Huur ons in</a>
+                    </div>
+                </div>
                 <a href="projecten.html">Projecten</a>
+                <a href="index.html#over-ons">Over ons</a>
+                <a href="contact.html">Contact</a>
                 <a href="aanvraag.html" class="btn btn-sm nav-cta nav-cta-green">Offerte aanvragen</a>
-                <a href="index.html#huur-in" style="color: #34C759; font-weight: 700;">Huur ons in</a>
-                <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Contact</a>
             </nav>
             <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
         <div class="mobile-menu">
             <a href="index.html">Home</a>
-            <a href="engineering.html">Engineering</a>
-            <a href="berekeningen.html">Berekeningen</a>
-            <a href="bim-modellering.html">BIM-Modellering</a>
-            <a href="prefab-solutions.html">Prefab Solutions</a>
+            <span class="mobile-menu-label">Diensten</span>
+            <a href="engineering.html" class="mm-sub">Engineering</a>
+            <a href="berekeningen.html" class="mm-sub">Berekeningen</a>
+            <a href="bim-modellering.html" class="mm-sub">BIM-Modellering</a>
+            <a href="prefab-solutions.html" class="mm-sub">Prefab Solutions</a>
+            <a href="index.html#huur-in" class="mm-sub">Huur ons in</a>
             <a href="projecten.html">Projecten</a>
-            <a href="aanvraag.html" style="color: #34C759; font-weight: 700;">Offerte aanvragen &rarr;</a>
-            <a href="index.html#huur-in" style="color: #34C759; font-weight: 700;">Huur ons in</a>
+            <a href="index.html#over-ons">Over ons</a>
             <a href="contact.html">Contact</a>
+            <a href="aanvraag.html" class="mm-cta">Offerte aanvragen &rarr;</a>
         </div>
     </header>
 
@@ -397,7 +405,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=20261123d"></script>
     <script>
         (function () {
             var form = document.getElementById('reqForm');

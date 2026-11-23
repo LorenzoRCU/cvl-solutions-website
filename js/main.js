@@ -149,3 +149,25 @@ function setActiveNavLink() {
         }
     });
 }
+
+// Diensten-dropdown: openen/sluiten met klik (touch) en Escape
+(function () {
+    document.querySelectorAll('.nav-dropdown').forEach(function (dd) {
+        var btn = dd.querySelector('.nav-dd-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var open = dd.classList.toggle('open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+    });
+    document.addEventListener('click', function () {
+        document.querySelectorAll('.nav-dropdown.open').forEach(function (dd) {
+            dd.classList.remove('open');
+            var b = dd.querySelector('.nav-dd-toggle'); if (b) b.setAttribute('aria-expanded', 'false');
+        });
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') document.dispatchEvent(new Event('click'));
+    });
+})();
