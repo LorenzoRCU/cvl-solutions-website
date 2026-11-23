@@ -1,6 +1,6 @@
 // Google Analytics 4 - vul hieronder het meet-ID in (G-XXXXXXXXXX). Leeg = uit.
 (function () {
-    var GA_ID = '';
+    var GA_ID = 'G-MBST2DWX39';
     if (!GA_ID) return;
     var s = document.createElement('script');
     s.async = true;
