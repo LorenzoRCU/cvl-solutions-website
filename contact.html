@@ -127,7 +127,9 @@
 
                 <div class="contact-form reveal-right">
                     <h3 style="margin-bottom: 24px;">Stuur ons een bericht</h3>
-                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <form id="contactForm" name="contact" method="POST" action="/bedankt-contact" data-netlify="true" netlify-honeypot="website_url" data-netlify-recaptcha="true" onsubmit="handleSubmit(event)">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p style="display:none;"><label>Niet invullen: <input name="website_url" tabindex="-1" autocomplete="off"></label></p>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Naam *</label>
@@ -163,7 +165,9 @@
                             <label for="message">Bericht *</label>
                             <textarea id="message" name="message" required placeholder="Vertel ons over uw project of vraag..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Verzenden</button>
+                        <div data-netlify-recaptcha="true" style="margin-bottom: 16px;"></div>
+                        <p id="contactError" style="display:none; color:#c0392b; font-size:0.9rem; margin-bottom:12px;">Verzenden is niet gelukt. Probeer het opnieuw of mail naar info@cvlsolutions.nl.</p>
+                        <button type="submit" id="contactSubmit" class="btn btn-primary" style="width: 100%; justify-content: center;">Verzenden</button>
                     </form>
                     <div id="successMessage" style="display: none; text-align: center; padding: 24px;">
                         <div style="font-size: 2rem; margin-bottom: 12px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -203,8 +207,24 @@
     <script>
         function handleSubmit(e) {
             e.preventDefault();
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
+            var form = document.getElementById('contactForm');
+            var btn = document.getElementById('contactSubmit');
+            var err = document.getElementById('contactError');
+            err.style.display = 'none';
+            var rc = form.querySelector('[name="g-recaptcha-response"]');
+            if (rc && !rc.value) { err.textContent = 'Vink eerst "Ik ben geen robot" aan.'; err.style.display = 'block'; return; }
+            btn.disabled = true; btn.textContent = 'Bezig met verzenden...';
+            fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+                .then(function (r) {
+                    if (!r.ok) throw new Error(r.status);
+                    form.style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                })
+                .catch(function () {
+                    err.textContent = 'Verzenden is niet gelukt. Probeer het opnieuw of mail naar info@cvlsolutions.nl.';
+                    err.style.display = 'block'; btn.disabled = false; btn.textContent = 'Verzenden';
+                    if (window.grecaptcha) try { grecaptcha.reset(); } catch (x) {}
+                });
         }
     </script>
 </body>
